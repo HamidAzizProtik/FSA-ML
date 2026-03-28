@@ -1,78 +1,108 @@
-# 📈 Financial-Sentiment-Analysis-ML
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/css-%23663399.svg?style=for-the-badge&logo=css&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Electron.js](https://img.shields.io/badge/Electron-191970?style=for-the-badge&logo=Electron&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+<div align="center">
 
-A **full-stack desktop application** which analyzes financial data using machine learning and serves it in a sleek and interactive UI. This project combines Python ML with an API, text preprocessing with C++ and an Electron frontend to deliver a tool capable of understanding financial sentiment. Models are evaluated using accuracy and classification reports.
+![Financial Sentiment Analysis](screenshots/Recording%202026-02-02%20112851.gif)
 
-### Screenshots
-![dashboard](screenshots/Recording%202026-02-02%20112851.gif)
-![home](screenshots/Screenshot%202026-02-02%20112926.png)
-![modeldeepdive](screenshots/Screenshot%202026-02-02%20112953.png)
+![Status](https://img.shields.io/badge/status-completed-10b981?style=for-the-badge) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![Electron](https://img.shields.io/badge/Electron-191970?style=for-the-badge&logo=Electron&logoColor=white) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
+
+*financial sentiment analysis — from raw text to a model to a UI you can actually use*
+
+</div>
+
+A desktop application that runs financial text through two classical ML models and gives you a clear picture of the sentiment behind it. Python handles the ML. C++ handles preprocessing for speed. Electron wraps everything into something simple and usable.
+
+The interesting part isn't any single piece. It's that all of them have to work together.
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+
+## Why I built this
+
+Finance touches everyone. It doesn't matter if you follow markets or not — the data behind financial decisions shapes things that affect all of us, and most people never get to look at it clearly.
+
+I wanted to build something that worked on real data and produced something real. Sentiment analysis felt like the right fit — it's the kind of problem where the output actually means something, where you can look at a result and have a genuine reaction to it rather than just a number passing a test.
+
+The ML side was the starting point, but what ended up being just as interesting was everything around it. Getting Flask and Electron to talk to each other properly. Writing preprocessing in C++ and linking it into a Python pipeline. I didn't expect to enjoy C++ as much as I did, and I didn't expect that connecting pieces across different languages would feel as satisfying as it does. There's something about the boundary between them — where one system hands off to another — that I find genuinely interesting to think about.
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+
+## What it does
+
+![dashboard](screenshots/Screenshot%202026-02-02%20112926.png)
+
+Two models — Naive Bayes and Logistic Regression — are trained on a financial sentiment dataset and served through a Flask API. The Electron frontend pulls from that API and presents the results in a UI that's simple and clean without hiding any of the detail that matters.
+
+Both models run on every input. Watching them agree tells you something. Watching them disagree tells you more — it gives you a real picture of which model is actually better and where each one breaks down.
+
+![model deep dive](screenshots/Screenshot%202026-02-02%20112953.png)
 ![analytics](screenshots/Screenshot%202026-02-02%20112644.png)
 
-## 📦 About the application
-### This project builds a complete workflow from the ground up:
-📁 **Data processing** using a C++ file for speed   
-🧠 **Two classical ML models**: Naive Bayes & Logistic Regression  
-📌 **Flask API** for serving predictions 🔌  
-🖥️ **Electron desktop interface** for interactive usage  
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
-### It features
-🎯 Multi-model predictions: Compares Naive Bayes and Logistic Regression outputs.\
-📊 Visualizations showing ML performance: Charts to explain model confidence, sentiment distribution over time, feature influence, etc.\
-🛠 Full backend + frontend integration: Python ML + C++ preprocessing + Electron UI.\
-🧩 Extensible architecture: Possible to add new models or visualizations.
+## Features
 
-## Installation & Setup 🚀
+- Side by side Naive Bayes and Logistic Regression predictions on every input
+- Visualizations for model confidence, sentiment distribution over time, and feature influence
+- C++ text preprocessing compiled as a shared library and linked into the Python pipeline
+- Flask API backend consumed by an Electron desktop frontend
+- Accuracy metrics and full classification reports for both models
 
-## 🛠 Prerequisites
-### Make sure you have:
-- 🐍 Python 3.10+
-- 🟢 Node.js 18+
-- ⚙️ g++ compiler 
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
-> ⚠️ **Important:** Run all commands from the project root directory (where `README.md` is located)
+## Setup
 
-### 🧠 1. Python Dependencies
+You need Python 3.10+, Node.js 18+, and a g++ compiler. Run everything from the project root.
+
+**Python dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-### 📊 2. Dataset Setup
-1. Download the dataset from [Kaggle - Financial Sentiment Analysis](https://www.kaggle.com/datasets/sbhatti/financial-sentiment-analysis?resource=download)
-2. Extract the CSV file
-3. Place it in the `data/` directory as `data.csv`
+**Dataset**
 
-### ⚡ 3. Compile C++ Extension
+Download from [Kaggle — Financial Sentiment Analysis](https://www.kaggle.com/datasets/sbhatti/financial-sentiment-analysis?resource=download), extract the CSV, and place it at `data/data.csv`.
+
+**C++ extension**
 ```bash
 cd src/cpp
 g++ -shared -o text_preprocess.dll text_preprocess.cpp
 cd ../..
 ```
-```Note that the .dll build instructions are for Windows. Linux/macOS users must compile a .so file.```
 
-### 🟢 4. Node.js Dependencies
+Linux/macOS: compile a `.so` instead of `.dll`.
+
+**Node dependencies**
 ```bash
 npm install
 ```
 
----
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
-## Running the Application 🎉
+## Running
 
-### 🧰 1: Start the Backend Server
-
-**Run Python backend server**
+Start the backend first:
 ```bash
 python src/python/main.py
 ```
 
-> ⏳ **Wait for the server to fully start** - Look for a message indicating the server is running
-
-### ✨ 2: Start the Electron Frontend
-
-Open a **new terminal window** and run:
+Wait for the server to confirm it's running, then open a new terminal:
 ```bash
 npm start
 ```
 
----
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+
+## Stack
+
+- Python — model training, scikit-learn, Flask API
+- C++ — text preprocessing compiled as a shared library
+- Electron + Node.js — desktop application shell
+- HTML / CSS / JavaScript — UI
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+
+## About
+
+I'm Hamid, 15, and I built this because I wanted to make something that worked on data that actually matters.
+
+The hardest part was getting all the layers talking to each other — Flask, Electron, a C++ shared library, a Python ML pipeline. The most surprising part was how much I enjoyed working across all of them. Linking things together across languages turned out to be one of the more interesting problems I've worked on.
+
+There's a lot more I want to build.
