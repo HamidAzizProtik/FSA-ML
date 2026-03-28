@@ -1,6 +1,6 @@
 <div align="center">
 
-![Financial Sentiment Analysis](screenshots/Recording%202026-02-02%20112851.gif)
+![Financial Sentiment Analysis](screenshots/banner.png)
 
 ![Status](https://img.shields.io/badge/status-completed-10b981?style=for-the-badge) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![Electron](https://img.shields.io/badge/Electron-191970?style=for-the-badge&logo=Electron&logoColor=white) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
 
@@ -33,7 +33,7 @@ Two models — Naive Bayes and Logistic Regression — are trained on a financia
 Both models run on every input. Watching them agree tells you something. Watching them disagree tells you more — it gives you a real picture of which model is actually better and where each one breaks down.
 
 ![model deep dive](screenshots/Screenshot%202026-02-02%20112953.png)
-![analytics](screenshots/Screenshot%202026-02-02%20112644.png)
+![dashboard demo](screenshots/Recording%202026-02-02%20112851.gif)
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
